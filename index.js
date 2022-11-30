@@ -1098,3 +1098,131 @@ abc
 // for (const el of str) {
 //     console.log(el);
 // }
+
+
+
+
+/* Расширение других Классов */
+
+// class NumbersArray extends Array {
+//   sum() {
+//     return this.reduce((el, acc) => acc += el, 0);  /* Метод reduce */
+//   }
+// }
+
+// const myArray = new NumbersArray(2, 5, 7);
+
+// console.log(myArray);
+// myArray.sum();
+
+// console.log(myArray.sum());
+
+
+
+
+/* Promise */
+
+// fetch('https://jsonplaceholder.typicode.com/todos')
+//   .then(response => {
+//     console.log(response)
+//     return response.json()
+//   })
+//   .then(json => console.log(json))
+//   .catch(error => console.error(error))
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/todos/6')
+//   .then(response => response.json())
+//   .then(json => console.log(json))
+//   .catch(error => console.log(error.message))
+
+
+
+
+// const getData = (url) =>
+//   new Promise((resolve, reject) => 
+//     fetch(url)
+//       .then(response => response.json())
+//       .then(json => resolve(json))
+//       .catch(error => reject(error))
+//   )
+
+// getData('https://jsonplaceholder.typicode.com/todos/6')
+//   .then(data => console.log(data))
+//   .catch(error => console.log(error.massage))
+
+
+
+
+/* ASYNC/AWAIT */
+
+// const asyncFn = async () => {
+  //   return 10
+  // }
+  // asyncFn()
+  //   .then(value => console.log(value))
+  
+  
+  // const asyncFn = async () => {
+    //   throw new Error('ERRor')
+// }
+
+// asyncFn()
+//   .then(value => console.log(value))
+//   .catch(error => console.log(error.massage))
+
+
+
+
+/* AWAIT */
+
+// const timerPromise = () => 
+//   new Promise((resolve, reject) => 
+//   setTimeout(() => resolve(), 2000))
+
+// const asyncFn = async () => {
+//     console.log('Timer starts')
+//     const startTime = performance.now()
+//     await timerPromise()
+//     const endTime = performance.now()
+//     console.log('Timer ended', endTime - startTime)
+// }
+
+  
+  
+  
+  
+  /* Promise в async/await */
+  
+
+// const getData = (url) =>
+//   new Promise((resolve, reject) => 
+//     fetch(url)
+//       .then(response => response.json())
+//       .then(json => resolve(json))
+//       .catch(error => reject(error))
+//   )
+
+// getData('https://jsonplaceholder.typicode.com/todos/6')
+//   .then(data => console.log(data))
+//   .catch(error => console.log(error.massage))
+
+// asyncFn()
+
+
+// const getData = async (url) => {       /* Асинхронная функция */
+//   const res = await fetch(url)         /* Возвращает ПРОМИС */
+//   const json = await res.json()        /* Возвращает ПРОМИС */
+//   return json                          /* Явный возврат */
+// }
+
+// const url = 'https://jsonplaceholder.typicode.com/todos/6'
+
+// try {
+//   const data = await getData(url)
+//   console.log(data)
+// } catch (error) {                    /* Обработка ошибок */
+//   console.error(error)
+//   console.log(error.message)
+// }
